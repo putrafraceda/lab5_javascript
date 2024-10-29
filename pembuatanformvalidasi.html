@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validasi</title>
+    <script>
+        function validateForm() {
+            // Ambil elemen form
+            var name = document.forms["myForm"]["name"].value;
+            var email = document.forms["myForm"]["email"].value;
+            var message = document.forms["myForm"]["message"].value;
+            var errorMessage = "";
+
+            // Validasi nama
+            if (name == "") {
+                errorMessage += "Nama harus diisi.\n";
+            }
+
+            // Validasi email
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (email == "") {
+                errorMessage += "Email harus diisi.\n";
+            } else if (!emailPattern.test(email)) {
+                errorMessage += "Format email tidak valid.\n";
+            }
+
+            // Validasi pesan
+            if (message == "") {
+                errorMessage += "Pesan harus diisi.\n";
+            }
+
+            // Jika ada error, tampilkan pesan dan hentikan pengiriman form
+            if (errorMessage != "") {
+                alert(errorMessage);
+                return false; // Hentikan pengiriman form
+            }
+            return true; // Izinkan pengiriman form
+        }
+    </script>
+</head>
+<body>
+
+<h2>Form Kontak</h2>
+<form name="myForm" onsubmit="return validateForm()" method="post">
+    <label for="name">Nama:</label><br>
+    <input type="text" id="name" name="name"><br><br>
+    
+    <label for="email">Email:</label><br>
+    <input type="text" id="email" name="email"><br><br>
+    
+    <label for="message">Pesan:</label><br>
+    <textarea id="message" name="message"></textarea><br><br>
+    
+    <input type="submit" value="Kirim">
+</form>
+
+</body>
+</html>
