@@ -6,13 +6,12 @@
     <title>Form Validasi</title>
     <script>
         function validateForm() {
-            // Ambil elemen form
+
             var name = document.forms["myForm"]["name"].value;
             var email = document.forms["myForm"]["email"].value;
             var message = document.forms["myForm"]["message"].value;
             var errorMessage = "";
 
-            // Validasi nama
             if (name == "") {
                 errorMessage += "Nama harus diisi.\n";
             }
@@ -25,17 +24,15 @@
                 errorMessage += "Format email tidak valid.\n";
             }
 
-            // Validasi pesan
             if (message == "") {
                 errorMessage += "Pesan harus diisi.\n";
             }
 
-            // Jika ada error, tampilkan pesan dan hentikan pengiriman form
             if (errorMessage != "") {
                 alert(errorMessage);
-                return false; // Hentikan pengiriman form
+                return false; 
             }
-            return true; // Izinkan pengiriman form
+            return true; 
         }
     </script>
 </head>
