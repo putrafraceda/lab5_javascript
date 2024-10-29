@@ -61,3 +61,8 @@ _ Gambar2
   ![img 21](Screenshot/21.png)
 - Gambar2
   ![img 22](Screenshot/22.png)
+## Pembuatan Form Validasi
+- Gambar1
+  ![img 23](Screenshot/23.png)
+- Gambar2
+  ![img 24](Screenshot/24.png)
